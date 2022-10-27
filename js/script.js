@@ -135,6 +135,10 @@ $('#video_full').trigger('pause');
 $('#video_full').hide(); 
  }
 }
+
+
+
+
 	
 	
 });
