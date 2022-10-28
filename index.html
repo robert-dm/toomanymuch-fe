@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
 <title>TMM Website</title>
 <link href="style.css" rel="stylesheet" />
 <link href="responsive.css" rel="stylesheet" />
@@ -24,6 +25,19 @@ document.write('<scr'+'ipt type="text/javascript" src="js/ScrollMagic.js"></scr'
 
 <body>
 
+<div class="mobile_header open">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="mobile_navigation">
+<ul class="mobile_pagination">
+<li><a class="active" href="#Home"><span class="hover-text">Home</span></a></li>
+<li><a class="" href="#About"><span class="hover-text">About</span></a></li>
+<li><a class="" href="#Work"><span class="hover-text">Work</span></a></li>
+<li><a class="" href="#Team"><span class="hover-text">Team</span></a></li>
+<li><a class="" href="#Contact"><span class="hover-text">Contact</span></a></li></ul>
+</div>
 
 <div class="social_section">
 <ul>
@@ -103,15 +117,28 @@ document.write('<scr'+'ipt type="text/javascript" src="js/ScrollMagic.js"></scr'
 
 <section  id="trigger" class="team element_section" data-section-name="Team">
 <div class="team_inner">
-<div class="col-md-6 global_based animate_trigger animate_opacity">
+
+<div class="col-md-6 global_based animate_trigger animate_opacity hide-sm">
 <p style="transform: translateY(70px) translateX(-27px);">WE ARE</p>
 <div class="tag_cover">
 <div style="font-family: 'Turbinado';font-size: 120px;color: #00f93d;">global</div>
 </div>
 <p style="transform: translateY(-65px) translateX(40px);">BASED</p>
 </div>
+
+
+<div class="col-md-6 global_based animate_trigger animate_opacity hide-lg">
+<p style="transform: translateY(40px) translateX(-20px);">WE ARE</p>
+<div class="tag_cover">
+<div style="font-family: 'Turbinado';font-size:90px;color: #00f93d;line-height: 1;">global</div>
+</div>
+<p style="transform: translateY(-30px) translateX(15px);">BASED</p>
+</div>
+
+
+
 <div class="col-md-6">
-<div style="padding:6%;"></div>
+<div class="hide-sm" style="padding:6%;"></div>
 <div class="content_team">
 <p>WORKING ACROSS TIME ZONES AND PLATFORMS,</p>
 <p>WE ARE MOVING AT THE SPEED OF CULTURE</p>
