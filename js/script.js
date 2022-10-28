@@ -8,7 +8,52 @@ $(document).ready(function(e) {
 	  loop:true,
 	  dots:true,
 	  nav:false,
+	    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        768:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:4,
+            nav:true
+        }
+		
+		}
 	  });	
+
+
+ $.fn.clickToggle = function(func1, func2) {
+        var funcs = [func1, func2];
+        this.data('toggleclicked', 0);
+        this.click(function() {
+            var data = $(this).data();
+            var tc = data.toggleclicked;
+            $.proxy(funcs[tc], this)();
+            data.toggleclicked = (tc + 1) % 2;
+        });
+        return this;
+    };
+
+
+$(".mobile_header").clickToggle(function(e) {
+    
+$(".mobile_navigation").animate({"right":"0"});	
+$(".mobile_header").addClass("close");
+	
+},function(){
+
+$(".mobile_navigation").animate({"right":"-100%"});	
+$(".mobile_header").removeClass("close");	
+	
+});
+
+
+
+
 
 
 /*
@@ -49,7 +94,7 @@ $.scrollify({
 	   
 	   setTimeout(function () {
      panels[i].find(".animate_trigger").addClass("animated");
-}, 200);
+}, 300);
 	    
 	
 
@@ -90,6 +135,17 @@ $.scrollify({
 
       */
       $(".pagination a").on("click",$.scrollify.move);
+	  
+	  $(".mobile_pagination a").on("click",function(e){
+		  var target = $(this).attr("href");
+		  $(".active_mobile").removeClass("active_mobile");
+		  $(this).addClass("active_mobile");
+		 $.scrollify.move(target);
+		 $(".mobile_navigation").animate({"right":"-100%"});	
+         $(".mobile_header").removeClass("close");
+		  
+		 });
+	  
     }
   });		  
     
